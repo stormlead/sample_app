@@ -1,11 +1,52 @@
+<head>
+  <script>
+// Load this when the DOM is ready
+$(function(){
+  // You used .myCarousel here.
+  // That's the class selector not the id selector,
+  // which is #myCarousel
+  $('#this-carousel-id').carousel({ interval: 2000 });
+</script>
+</head>
+  <h1>Lenses for Everyone.</h1>
+
+
 <div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+  <!--  Carousel - consult the Twitter Bootstrap docs at
+      http://twitter.github.com/bootstrap/javascript.html#carousel -->
+<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+      <%= link_to image_tag("CanonBasic.png", alt: "Canon Basic Lenses"), 'http://www.bokehfire.com' %>
+      <div class="carousel-caption">
+        <p>Canon Basic Lenses</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("CanonPremium.png", alt: "Canon Premium Lenses"), 'http://www.bokehfire.com' %>
+      <div class="carousel-caption">
+        <p>Canon Premium Lenses</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("NikonBasic.png", alt: "Nikon Basic Lenses"), 'http://www.bokehfire.com' %>
+      <div class="carousel-caption">
+        <p>Nikon Basic Lenses</p>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("NikonPremium.png", alt: "Nikon Premium Lenses"), 'http://www.bokehfire.com' %>
+      <div class="carousel-caption">
+        <p>Nikon Premium Lenses</p>
+      </div>
+    </div>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
 
-  <h2>
-    This is the home page BokehFire, b-otch!
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+</div><!-- /.carousel -->
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<div align="center">  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %> </div>
+</div>
